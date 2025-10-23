@@ -7,6 +7,10 @@ permissions:
   pages: write
 jobs:
   Explore-GitHub-Actions:
+    environment:
+      url: ${{ steps.deploy.outputs.page_url }}
+      name: github-pages
+      
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,4 +35,5 @@ jobs:
     - run: npm test
 
     - name: Deploy site
+      id: deploy
       uses: actions/deploy-pages@v4.0.5
