@@ -3,6 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions with node js 🚀
 on: [push]
 permissions:
   id-token: write
+  contents: read
+  pages: write
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -24,6 +26,7 @@ jobs:
       uses: actions/upload-artifact@v4.6.2
       with:
         path: dist/
+        name: github-pages
           
     - run: npm test
 
