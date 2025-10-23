@@ -18,9 +18,12 @@ jobs:
     - run: npm run build
 
     - name: Upload a Build Artifact
+      id: upload-artifact
       uses: actions/upload-artifact@v4.6.2
       with:
         path: dist/
           
     - run: npm test
 
+    - name: Deploy site
+      uses: actions/deploy-pages@v4.0.5
