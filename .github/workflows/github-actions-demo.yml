@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions with node js 🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -15,7 +15,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run build --if-present
+    - run: npm run build
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v4.6.2
